@@ -31,10 +31,10 @@ const Header = () => (
           </Link>
         </div>
         <div>
-          <Link to="/#works">Magasin</Link>
-          <Link to="/gallery">Additifs</Link>
-          <Link to="/#about">Articles</Link>
-          <Link to="/#about">Contact</Link>
+          <Link to="/#magasin">Magasin</Link>
+          <Link to="/additifs">Additifs</Link>
+          <Link to="/articles">Articles</Link>
+          <Link to="/contact">Contact</Link>
         </div>
       </div>
     </div>

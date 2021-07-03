@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Locomotive Scroll Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Pêche TELLIER`,
+    description: `Site du magasin Pêche TELLIER Saint-Martin à Saint-Quentin`,
+    author: `Florian TELLIER`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
