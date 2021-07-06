@@ -1,3 +1,9 @@
+@font-face {
+  font-family: "Revue";
+  src: url("../font/RevueBT-Regular.otf") format("truetype"),
+    url("../font/RevueBT-Regular.otf") format("opentype");
+}
+
 $bg_color: #030504;
 $font_color: #fcf6f5;
 $font_color2: #fcf6f5;
@@ -99,7 +105,7 @@ nav {
 }
 //! header
 .header {
-  background: $bg_color;
+  // background: $bg_color
   transition: transform 0.35s ease;
   animation: navAnim 0.7s backwards;
   animation-delay: 1s;
@@ -137,24 +143,34 @@ nav {
         }
       }
       &.logo {
-        font-size: 2.5em;
-        font-weight: bold;
-        margin: 0;
-        padding: 0;
-        color: transparent;
-        -webkit-text-stroke-width: 1px;
-        -webkit-text-stroke-color: $primary_color;
-
-        span {
-          display: block;
-          padding-left: 1em;
-          &:last-child {
-            padding-top: 10px;
-          }
+        // font-size: 2.5em;
+        // font-weight: bold;
+        // margin: 0;
+        // padding: 0;
+        // color: transparent;
+        // -webkit-text-stroke-width: 1px;
+        // -webkit-text-stroke-color: $primary_color;
+        .image {
+          // height: 100%;
+          width: 15vw;
         }
+        // span {
+        //   display: block;
+        //   padding-left: 1em;
+        //   &:last-child {
+        //     padding-top: 10px;
+        //   }
+        // }
         &::after {
           display: none;
         }
+      }
+    }
+    .active {
+      &::after {
+        transform: scaleX(1);
+        transition: 0.3s;
+        transform-origin: left;
       }
     }
   }
@@ -163,7 +179,6 @@ nav {
 //!HERO SECTION
 .hero_section {
   height: 100vh;
-  background: pink;
   position: relative;
   .bg_image {
     position: absolute;
@@ -171,6 +186,7 @@ nav {
     height: 100%;
     background: $bg_color;
     overflow: hidden;
+    transform: translateX(5%);
   }
   .title_container {
     position: absolute;
@@ -184,7 +200,9 @@ nav {
         font-size: 10em;
         font-weight: bold;
         color: $primary_color;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        // font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-family: "Revue", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
         display: inline-block;
       }
     }
@@ -356,7 +374,7 @@ nav {
 
 //! Contact
 .contact_container {
-  padding-top: 15vh;
+  padding-top: 10vh;
   text-align: center;
   .hero {
     height: 35vh;
@@ -369,7 +387,7 @@ nav {
       left: 50%;
       transform: translate(-50%, -50%);
       color: white;
-      mix-blend-mode: difference;
+      // mix-blend-mode: difference;
       border-bottom: 10px solid $primary_color;
     }
     .bg_image {
@@ -378,7 +396,7 @@ nav {
       height: 100%;
       top: 0;
       left: 0;
-      opacity: 0.7;
+      opacity: 0.4;
       overflow: hidden;
     }
   }
@@ -425,7 +443,7 @@ nav {
 
 //! Articles Pages
 .articlesPages {
-  height: 200vh;
+  // height: 200vh;
   padding: 0 10vw;
 
   .hero-articles {
@@ -451,43 +469,163 @@ nav {
 }
 
 //! FOOTER
+
 footer {
-  height: 15vh;
-  div {
-    width: 60%;
+  width: 100%;
+  height: 35vh;
+  padding: 0 10vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  a {
+    text-decoration: none;
+  }
+  h3 {
+    text-transform: uppercase;
+  }
+  & > div {
+    width: 30%;
     height: 100%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    padding: 2vh 0;
+    hr {
+      background: $font_color;
+    }
+  }
+  .a_propos {
+    h2 {
+      font-family: "Revue";
+      font-size: 3vw;
+      color: $primary_color;
+    }
+    p {
+      padding-top: 5%;
+      font-size: 0.7em;
+    }
+  }
+  .contact {
+    .linksContainer {
+      width: 100%;
+      height: 100%;
+      div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 20%;
+        width: 100%;
+        svg {
+          font-size: 1.5em;
+          width: 20%;
+        }
+        span {
+          width: 70%;
+        }
+      }
+    }
+  }
+  .informations {
     a {
       text-decoration: none;
+      // display: block;
       position: relative;
-      color: $font_color;
-      letter-spacing: 3px;
-      font-weight: bolder;
       &::after {
         content: "";
         position: absolute;
         left: 0;
         bottom: -20%;
         height: 20%;
-        width: 100%;
+        width: 0px;
         background: $primary_color;
         pointer-events: none;
         transition: 0.3s;
       }
       &:hover {
-        color: $font_color2;
-        font-style: normal;
         &::after {
-          width: 0px;
+          width: 100%;
+        }
+      }
+      &.active {
+        &::after {
+          width: 100%;
         }
       }
     }
   }
 }
 
+//! text image section
+
+.text-img-section {
+  height: 100vh;
+  // padding: 0 10%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 15%;
+  .image_container {
+    width: 50%;
+    height: 90%;
+    position: relative;
+    .image1 {
+      position: absolute;
+      left: 2%;
+      width: 40%;
+      height: 50%;
+      bottom: 0;
+      overflow: hidden;
+    }
+    .image2 {
+      position: absolute;
+      right: 5%;
+      width: 45%;
+      height: 60%;
+      top: 10%;
+      overflow: hidden;
+    }
+  }
+  .text_container {
+    width: 50%;
+    h1 {
+      color: $primary_color;
+      font-size: 5em;
+      padding: 0;
+      margin: 0;
+    }
+    p {
+      padding-top: 5%;
+      padding-right: 5%;
+    }
+  }
+}
+
+//! Gallery
+.gallery_container {
+  width: 100%;
+  height: 100vh;
+  padding: 0 15vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  .image {
+    width: 30%;
+    height: 40%;
+  }
+  &.small {
+    .image {
+      height: 30vh;
+      width: 30vh;
+    }
+  }
+}
+
+.marques {
+  h1 {
+    text-align: center;
+    font-size: 3em;
+    color: $primary_color;
+  }
+}
 //! 404 not found
 .notFound {
   padding: 20%;

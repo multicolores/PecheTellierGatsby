@@ -2,6 +2,9 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 
+import Image from "./image"
+
+
 const Header = () => (
   <header
     data-scroll
@@ -26,15 +29,14 @@ const Header = () => (
       >
         <div>
           <Link to="/" className="logo">
-            <span>Pêche</span>
-            <span>TELLIER</span>
+            <Image alt="logo peche tellier" filename={"logo-peche-tellier-small.png"}/>
           </Link>
         </div>
         <div>
-          <Link to="/#magasin">Magasin</Link>
-          <Link to="/additifs">Additifs</Link>
-          <Link to="/articles">Articles</Link>
-          <Link to="/contact">Contact</Link>
+          <Link to="/#magasin" activeClassName="active">Magasin</Link>
+          <Link to="/additifs" activeClassName="active">Additifs</Link>
+          <Link to="/articles" activeClassName="active">Articles</Link>
+          <Link to="/contact" activeClassName="active">Contact</Link>
         </div>
       </div>
     </div>

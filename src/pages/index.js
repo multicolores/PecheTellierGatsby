@@ -52,10 +52,10 @@ const IndexPage = () => {
         </div>
         <div className="image_container">
           <div className="image1">
-            <ImageParallax alt="image du magasin" filename={"pike-bg.jpg"} />
+            <ImageParallax alt="image du magasin" filename={"magasin-interieur.jpg"} />
           </div>
           <div className="image2">
-            <ImageParallax alt="image du magasin" filename={"pike-bg.jpg"} />
+            <ImageParallax alt="image du magasin" filename={"magasin-interieur.jpg"} />
           </div>
         </div>
       </section>
@@ -80,6 +80,20 @@ const IndexPage = () => {
             </div>
         </Link>
       </section>
+
+    <div className="marques">
+      <h1>Les plus grandes marques de pêches</h1>
+      <section className="gallery_container small">
+          <Image alt="image d'additif" filename={"gatsby-icon.png"} />
+          <Image alt="image d'additif" filename={"gatsby-icon.png"} />
+          <Image alt="image d'additif" filename={"gatsby-icon.png"} />
+          <Image alt="image d'additif" filename={"gatsby-icon.png"} />
+          <Image alt="image d'additif" filename={"gatsby-icon.png"} />
+          <Image alt="image d'additif" filename={"gatsby-icon.png"} />
+          <Image alt="image d'additif" filename={"gatsby-icon.png"} />
+          <Image alt="image d'additif" filename={"gatsby-icon.png"} />
+        </section>
+    </div>
 
     </Layout>
   );

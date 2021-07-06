@@ -15,7 +15,7 @@ const Contact = () => (
         <div className="hero">
             <div className="bg_image">
                 <div className="img_container_loco" data-scroll data-scroll-speed="-1.7">
-                    <BigImage alt="image de fond d'un brochet" filename={"pike-bg.jpg"} />
+                    <BigImage alt="image de fond d'un brochet" filename={"magasin-interieur.jpg"} />
                 </div>
             </div>
             <h1>Nos coordonnées</h1>
