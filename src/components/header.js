@@ -34,8 +34,9 @@ const Header = () => (
         </div>
         <div>
           <Link to="/#magasin" activeClassName="active">Magasin</Link>
-          <Link to="/additifs" activeClassName="active">Additifs</Link>
+          <Link to="/appats" activeClassName="active">Appâts</Link>
           <Link to="/articles" activeClassName="active">Articles</Link>
+          <Link to="/amorces" activeClassName="active">Amorces</Link>
           <Link to="/contact" activeClassName="active">Contact</Link>
         </div>
       </div>

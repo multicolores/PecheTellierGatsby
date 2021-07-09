@@ -25,10 +25,10 @@ const Project = (props) => {
             </div>
             <div className="image_container">
             <div className="image1">
-                <ImageParallax alt="image du magasin" filename={"pike-bg.jpg"} />
+                <ImageParallax alt="image du magasin" filename={props.image_url2} />
             </div>
             <div className="image2">
-                <ImageParallax alt="image du magasin" filename={"pike-bg.jpg"} />
+            <ImageParallax alt="image du magasin" filename={props.image_url3} />
             </div>
             </div>
         </section>

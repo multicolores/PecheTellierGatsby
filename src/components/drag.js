@@ -8,33 +8,19 @@ import Image from "./image"
 const Drag = () => (
     <div className="drag_coontainer" >
 
-    <motion.div className="drag" drag="x" dragConstraints={{ left: -1100, right: 0 }} >
-    <div className="images_container">
-      <div className="img_invi"> </div>
-      <Image alt="image" filename="image1.jpg" />
-      <Link to="/project_1">Projet</Link>
-    </div>
-    <div className="images_container" >
-       <div className="img_invi"> </div>
-       <Image alt="image" filename="image2.jpg" />
-       <Link to="/project_2">
-         Projet
-       </Link>
-    </div>
-    <div className="images_container" >
-    <div className="img_invi"> </div>
-    <Image alt="image" filename="image3.jpg" />
-       <Link to="/project_3">
-         Projet
-       </Link>
-    </div>
-    <div className="images_container" >
-    <div className="img_invi"> </div>
-    <Image alt="image" filename="image4.jpg" />
-       <Link to="/project_4">
-         Projet
-       </Link>
-    </div>
+    <motion.div className="drag" drag="x" dragConstraints={{ left: -1700, right: 0 }} >
+    <Image alt="image d'additif" filename={"marque-11.png"} />
+    <Image alt="image d'additif" filename={"marque-5.png"} />
+    <Image alt="image d'additif" filename={"marque-7.png"} />
+    <Image alt="image d'additif" filename={"marque-8.png"} />
+    <Image alt="image d'additif" filename={"marque-1.png"} />
+    <Image alt="image d'additif" filename={"marque-2.png"} />
+    <Image alt="image d'additif" filename={"marque-3.png"} />
+    <Image alt="image d'additif" filename={"marque-4.png"} />
+    <Image alt="image d'additif" filename={"marque-6.png"} />
+    <Image alt="image d'additif" filename={"marque-9.png"} />
+    <Image alt="image d'additif" filename={"marque-10.png"} />
+    <Image alt="image d'additif" filename={"marque-12.png"} />
 
   </motion.div>
   </div>

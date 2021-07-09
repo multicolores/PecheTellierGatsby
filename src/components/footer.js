@@ -47,9 +47,9 @@ const Nav = () => (
             <h3>Informations</h3>
             <hr />
             <Link to="/" activeClassName="active">Notre magasin</Link> <br />
-            <Link to="/amorces" activeClassName="active">Amorces</Link><br />
             <Link to="/appats" activeClassName="active">Appâts</Link><br />
-            <Link to="/materiel" activeClassName="active">Matériels</Link><br />
+            <Link to="/amorces" activeClassName="active">Amorces</Link><br />
+            <Link to="/articles" activeClassName="active">Articles</Link><br />
             <Link to="/contact" activeClassName="active">Contact</Link>
         </div>
     </footer>

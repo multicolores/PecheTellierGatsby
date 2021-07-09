@@ -1,13 +1,48 @@
 import React from "react"
 import { Link } from "gatsby"
+import { Slide } from 'react-slideshow-image';
 
+import 'react-slideshow-image/dist/styles.css'
 import Layout from "../components/layout"
 import Image from "../components/image"
 import ImageParallax from "../components/image_parallax"
 import SEO from "../components/seo"
 import Header from "../components/header"
 import BigImage from "../components/big_image"
+import Drag from "../components/drag"
 
+
+const slideText = [
+  {
+    nom: 'Nom Prenom',
+    texte: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    key: '1',
+  },
+  {
+    nom: 'Nom Prenom',
+    texte: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    key: '2',
+  },
+  {
+    nom: 'Nom Prenom',
+    texte: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    key: '3',
+  },
+  {
+    nom: 'Nom Prenom',
+    texte: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    key: '4',
+  },
+];
+
+const proprietes ={
+  duration: 5000,
+  transitionDuration: 800,
+  infinite: true,
+  indicators: true,
+  arrows: true,
+  easing: "ease",
+}
 
 
 const IndexPage = () => {
@@ -61,38 +96,53 @@ const IndexPage = () => {
       </section>
 
       <section className="produits">
-        <Link to="/">
+        <Link to="/articles">
           <div className="produits_img_container">
-              <ImageParallax alt="image d'un pêcheur" filename={"pecheur1.jpg"} />
+              <Image alt="image d'un pêcheur" filename={"pecheur1.jpg"} />
               <h2>Articles</h2>
           </div>
         </Link>
-        <Link to="/leurres">
+        <Link to="/amorces">
           <div className="produits_img_container">
-              <ImageParallax alt="image de leurs" filename={"leurres.jpg"} />
-              <h2>Leurres</h2>
+              <Image alt="image de leurs" filename={"magasin-interieur.jpg"} /> //! mettre / prendre image du rayon des amorces 
+              <h2>Amorces</h2>
           </div>
         </Link>
-        <Link to="/additifs">
+        <Link to="/appats">
             <div className="produits_img_container">
-                <ImageParallax alt="image d'additifs" filename={"vers-farine.jpg"} />
-                <h2>Additifs</h2>
+                <Image alt="image d'additifs" filename={"vers-farine.jpg"} />
+                <h2>Appâts</h2>
             </div>
         </Link>
       </section>
 
+
+      <section className="avis">
+        <h1>Écoutez ce que nos fidèles clients disent sur nous </h1>
+        <div className="slide-container">
+          <Slide {...proprietes}>
+          {slideText.map((slideText, index)=> (
+              <div className="each-slide" key={index}>
+                <div className="avis_text">
+                  <p>{slideText.texte}</p>
+                  <h3>{slideText.nom}</h3>
+                </div>
+              </div>
+            ))} 
+          </Slide>
+        </div>
+
+        <Link to="https://www.google.com/search?q=peche+tellier&rlz=1C1CHBF_frFR791FR792&oq=peche+tellier&aqs=chrome..69i57j69i60l3.1449j0j1&sourceid=chrome&ie=UTF-8#lrd=0x47e81866c2466957:0xfdc30cdbf64197bf,1,,,">
+          <Image alt="logo google review" filename={"google-reviews.png"} />
+        </Link>
+      </section>
+
+
+
     <div className="marques">
-      <h1>Les plus grandes marques de pêches</h1>
-      <section className="gallery_container small">
-          <Image alt="image d'additif" filename={"gatsby-icon.png"} />
-          <Image alt="image d'additif" filename={"gatsby-icon.png"} />
-          <Image alt="image d'additif" filename={"gatsby-icon.png"} />
-          <Image alt="image d'additif" filename={"gatsby-icon.png"} />
-          <Image alt="image d'additif" filename={"gatsby-icon.png"} />
-          <Image alt="image d'additif" filename={"gatsby-icon.png"} />
-          <Image alt="image d'additif" filename={"gatsby-icon.png"} />
-          <Image alt="image d'additif" filename={"gatsby-icon.png"} />
-        </section>
+      {/* <h1>Les plus grandes marques de pêches</h1> */}
+      <Drag />
+
     </div>
 
     </Layout>
