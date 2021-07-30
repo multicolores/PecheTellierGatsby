@@ -11,6 +11,7 @@ const Project = (props) => {
     return(
         <div className="articlesPages">
             <section className="hero-articles">
+ 
                 <div className="bg_image">
                     <div className="img_container_loco" data-scroll data-scroll-speed="-1.7">
                         <BigImage alt="image de fond d'un brochet" filename={props.image_url} />

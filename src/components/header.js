@@ -21,11 +21,11 @@ const Header = () => (
     <div className="header" style={{ transition: `transform 0.35s ease`, }}>
       <div
         className="links_container"
-        style={{
-          margin: `0 auto`,
-          padding: `0 2em`,
-          height: `90px`,
-        }}
+        // style={{
+        //   margin: `0 auto`,
+        //   padding: `0 2em`,
+        //   height: `90px`,
+        // }}
       >
         <div>
           <Link to="/" className="logo">

@@ -51,7 +51,8 @@ const IndexPage = () => {
       <SEO title="Home" />
       <Header />
 
-      <section className="hero_section">
+     {/* //! ancien hero  */}
+      {/* <section className="hero_section">
         <div className="bg_image">
           <div className="img_container_loco" data-scroll data-scroll-speed="-1.7">
             <BigImage alt="image de fond d'un brochet" filename={"pike-bg.jpg"} />
@@ -76,8 +77,34 @@ const IndexPage = () => {
           </div>
           <a href="#magasin">découvrez notre magasin</a>
         </div>
-      </section>
+      </section> */}
 
+      <section className="hero_section">
+        <div className="bg_image">
+          <div className="img_container_loco" data-scroll data-scroll-speed="-1.7">
+            <BigImage alt="image de fond représentant un pêcheur" filename={"flat-peche2.png"} />
+          </div>
+        </div>
+        <div className="title_container" data-scroll data-scroll-speed="2.7">
+          <div className="span_container">
+            <span className="span_1">P</span>
+            <span className="span_2">ê</span>
+            <span className="span_3">c</span>
+            <span className="span_4">h</span>
+            <span className="span_5">e</span>
+          </div>
+          <div className="span_container">
+            <span className="span_1">T</span>
+            <span className="span_2">E</span>
+            <span className="span_3">L</span>
+            <span className="span_4">L</span>
+            <span className="span_5">I</span>
+            <span className="span_6">E</span>
+            <span className="span_7">R</span>
+          </div>
+          <a href="#magasin">découvrez notre magasin</a>
+        </div>
+      </section>
 
       <section className="magasin" id="magasin">
         <div className="text_container">
@@ -116,7 +143,7 @@ const IndexPage = () => {
         </Link>
       </section>
 
-
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#00539c" fill-opacity="1" d="M0,288L80,250.7C160,213,320,139,480,138.7C640,139,800,213,960,234.7C1120,256,1280,224,1360,208L1440,192L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path></svg>
       <section className="avis">
         <h1>Écoutez ce que nos fidèles clients disent sur nous </h1>
         <div className="slide-container">

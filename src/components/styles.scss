@@ -4,11 +4,17 @@
     url("../font/RevueBT-Regular.otf") format("opentype");
 }
 
-$bg_color: #030504;
-$font_color: #fcf6f5;
-$font_color2: #070707;
+// $bg_color: #030504;
+// $font_color: #fcf6f5;
+// $font_color2: #070707;
+// $primary_color: #fee715;
+// $second_color: #fcf6f5;
+
+$bg_color: white;
+$font_color: #191919;
+$font_color2: #f2edd7;
 $primary_color: #fee715;
-$second_color: #fcf6f5;
+$second_color: #00539c;
 
 * {
   margin: 0;
@@ -32,6 +38,7 @@ body {
 }
 h1 {
   font-size: 5em;
+  color: $second_color !important;
 }
 h2 {
   font-size: 4em;
@@ -109,16 +116,20 @@ nav {
   transition: transform 0.35s ease;
   animation: navAnim 0.7s backwards;
   animation-delay: 1s;
+  background: $second_color;
+  height: 9vh;
   .links_container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 25px;
+    // gap: 25px;
+    height: 100%;
     a {
       text-decoration: none;
       font-size: 1.1em;
       margin: 0 1.5em;
       position: relative;
+      color: white;
       @media (max-width: 630px) {
         margin: 0;
         margin-right: 20px;
@@ -152,7 +163,7 @@ nav {
         // -webkit-text-stroke-color: $primary_color;
         .image {
           // height: 100%;
-          width: 15vw;
+          width: 11vw;
         }
         // span {
         //   display: block;
@@ -177,16 +188,89 @@ nav {
 }
 
 //!HERO SECTION
+//! ancien hero
+// .hero_section {
+//   height: 100vh;
+//   position: relative;
+//   .bg_image {
+//     position: absolute;
+//     width: 125%;
+//     height: 100%;
+//     background: $bg_color;
+//     overflow: hidden;
+//     transform: translateX(5%);
+//   }
+//   .title_container {
+//     position: absolute;
+//     margin-left: 10vw;
+//     margin-top: 15%;
+//     .span_container {
+//       &:nth-child(2) {
+//         margin-top: 100px;
+//       }
+//       span {
+//         font-size: 10em;
+//         font-weight: bold;
+//         color: $primary_color;
+//         // font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+//         font-family: "Revue", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+//         display: inline-block;
+//       }
+//     }
+//     a {
+//       font-size: 1.3em;
+//       padding-top: 40px;
+//       display: inline-block;
+//       text-decoration: none;
+//       position: relative;
+//       color: $font_color;
+//       font-family: "Cardo";
+//       transition: 0.15s;
+//       font-weight: lighter;
+//       animation: text2 0.7s;
+//       animation-fill-mode: backwards;
+//       animation-delay: 1s;
+
+//       &::after {
+//         content: "";
+//         position: absolute;
+//         width: 100%;
+//         height: 5px;
+//         background: $primary_color;
+//         bottom: -10%;
+//         left: 0;
+//       }
+//       &:hover {
+//         transform: scale(1.05);
+//       }
+//     }
+//   }
+// }
+
+// @for $i from 1 through 7 {
+//   .span_#{$i} {
+//     animation: text 1s;
+//     animation-fill-mode: backwards;
+//     animation-delay: 0.2s + 0.1s * $i;
+//   }
+// }
+
+//! nouveau hero
 .hero_section {
   height: 100vh;
   position: relative;
   .bg_image {
     position: absolute;
-    width: 125%;
+    width: 100%;
     height: 100%;
-    background: $bg_color;
+    background: $second_color;
     overflow: hidden;
-    transform: translateX(5%);
+    // transform: translateX(5%);
+    right: 0;
+    .image {
+      height: 100%;
+      width: auto;
+    }
   }
   .title_container {
     position: absolute;
@@ -211,7 +295,7 @@ nav {
       display: inline-block;
       text-decoration: none;
       position: relative;
-      color: $font_color;
+      color: $font_color2;
       font-family: "Cardo";
       transition: 0.15s;
       font-weight: lighter;
@@ -323,13 +407,20 @@ nav {
 }
 
 //! Avis
+svg {
+  transform: translateY(5%);
+  margin-top: -10%;
+}
 .avis {
   // height: 100vh;
   padding: 10vh 15vw;
+  margin: 0;
   text-align: center;
   position: relative;
+  background: $second_color;
+  color: $font_color2;
   h1 {
-    color: $primary_color;
+    color: $primary_color !important;
     font-size: 3em;
   }
   .avis_text {
@@ -337,6 +428,9 @@ nav {
   }
   h3 {
     padding-top: 2%;
+  }
+  p {
+    color: $font_color2;
   }
   .image {
     width: 15%;
@@ -352,15 +446,19 @@ nav {
   justify-content: space-around;
   align-items: center;
   // margin-top: 100px;
-  padding: 0 10%;
+  padding: 0 15%;
   a {
-    width: 25%;
+    width: 30%;
     height: 70%;
     .produits_img_container {
       width: 100%;
       height: 100%;
       overflow: hidden;
       position: relative;
+      clip-path: polygon(92% 0, 100% 8%, 100% 100%, 0 100%, 0 0);
+      // clip-path: circle(50% at 50% 50%);
+
+      transition: 0.3s;
       .image {
         height: 100%;
         width: 100%;
@@ -387,6 +485,14 @@ nav {
       }
 
       &:hover {
+        clip-path: polygon(100% 0, 100% 0%, 100% 100%, 0 100%, 0 0);
+        // clip-path: circle(100% at 50% 50%);
+
+        .image {
+          transform: scale(1.05);
+          // transition: 0.5s;
+          transition: transform 0.7s;
+        }
         h2 {
           opacity: 1;
           transform: translate(-50%, -50%);
@@ -434,6 +540,7 @@ nav {
     align-items: center;
     height: 50vh;
     padding: 0 20vw;
+    position: relative;
     svg {
       height: 30%;
     }
@@ -471,26 +578,65 @@ nav {
 //! Articles Pages
 .articlesPages {
   // height: 200vh;
+
   padding: 0 10vw;
 
+  //! ancien hero
+  // .hero-articles {
+  //   transform: translateY(25vh);
+  //   position: relative;
+  //   height: 100vh;
+  //   .bg_image {
+  //     width: 100%;
+  //     height: 80%;
+  //     position: absolute;
+  //     bottom: -5%;
+  //     overflow: hidden;
+  //     // clip-path: inset(10% 30.1% 0% 30% round 25vw 25vw 0vw 0vw);
+  //   }
+  //   h1 {
+  //     position: absolute;
+  //     left: 50%;
+  //     top: -10%;
+  //     transform: translateX(-50%);
+  //     font-size: 10em;
+  //     color: $primary_color;
+  //     font-family: "freight-big-pro", serif;
+  //   }
+  // }
+
   .hero-articles {
-    transform: translateY(25vh);
+    transform: translateY(15vh);
     position: relative;
-    height: 100vh;
+    height: 50vh;
+    // background: pink;
     .bg_image {
       width: 100%;
-      height: 80%;
+      height: 100%;
       position: absolute;
-      bottom: -5%;
+      bottom: 0%;
       overflow: hidden;
+      opacity: 0.6;
+      clip-path: polygon(
+        100% 100%,
+        0 100%,
+        0 20%,
+        10% 0,
+        50% 0,
+        90% 0,
+        100% 20%
+      );
     }
     h1 {
       position: absolute;
       left: 50%;
-      top: -10%;
-      transform: translateX(-50%);
+      top: 50%;
+      transform: translate(-50%, -50%);
       font-size: 10em;
-      color: $primary_color;
+      color: $font_color;
+      font-family: serif;
+      font-weight: normal;
+      // border-bottom: 10px solid $primary_color;
     }
   }
 }
@@ -607,6 +753,7 @@ footer {
       height: 60%;
       top: 10%;
       overflow: hidden;
+      // clip-path: inset(10% 0.1% 0% 0% round 25vw 25vw 0vw 0vw);
     }
   }
   .text_container {
@@ -784,6 +931,22 @@ footer {
   height: 100%;
   .image {
     height: 100%;
+  }
+}
+.img_container_loco2 {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  .img_container_loco2_image {
+    width: 100%;
+    height: 100%;
+    .image {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: 120%;
+    }
   }
 }
 
