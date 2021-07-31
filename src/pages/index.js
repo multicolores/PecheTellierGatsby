@@ -1,6 +1,7 @@
-import React from "react"
+import React, {useState, useEffect } from "react";
 import { Link } from "gatsby"
 import { Slide } from 'react-slideshow-image';
+import { motion, AnimatePresence } from "framer-motion";
 
 import 'react-slideshow-image/dist/styles.css'
 import Layout from "../components/layout"
@@ -46,6 +47,21 @@ const proprietes ={
 
 
 const IndexPage = () => {
+
+
+  const [revealImg, setRevealImg] = useState({
+    show: false,
+    show_articles: true,
+    show_Amorces: false,
+    show_appats: false,
+    class: "r",
+  });
+
+
+
+
+
+
   return (
     <Layout>
       <SEO title="Home" />
@@ -123,7 +139,103 @@ const IndexPage = () => {
       </section>
 
       <section className="produits">
-        <Link to="/articles">
+
+
+        <div className="text_container">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero maiores nostrum non minus officia, aliquid debitis adipisci voluptate quis eveniet inventore veritatis dolorum obcaecati corrupti quae voluptatem aperiam impedit. Voluptas!</p>
+            <div className="links">
+              <motion.div 
+                  onHoverStart={()=>
+                   setRevealImg({
+                       show_articles: true,
+                       class: "animated",
+                   })}
+                   onHoverEnd={()=>
+                    setRevealImg({
+                      show_articles: false,
+                      class: "r",
+                    })}>
+               <Link to="/articles">Articles</Link>
+              </motion.div>
+
+              <motion.div 
+                  onHoverStart={()=>
+                   setRevealImg({
+                    show_Amorces: true,
+                       class: "animated",
+                   })}
+                   onHoverEnd={()=>
+                    setRevealImg({
+                      show_Amorces: false,
+                      class: "r",
+                    })}>
+              <Link to="/amorces">Amorces</Link>
+              </motion.div>
+
+              <motion.div 
+                  onHoverStart={()=>
+                   setRevealImg({
+                       show_appats: true,
+                       class: "animated",
+                   })}
+                   onHoverEnd={()=>
+                    setRevealImg({
+                      show_appats: false,
+                      class: "r",
+                    })}>
+              <Link to="/appats">Appâts</Link>
+              </motion.div>
+            </div>
+        </div>
+        <div className="imgs_container">
+              <AnimatePresence>
+                {revealImg.show_articles && (
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    className={revealImg.class}
+                  >
+                <Image alt="images des produits" filename={"pecheur1.jpg"} />
+ 
+                </motion.div>
+                )}
+              </AnimatePresence>
+
+              <AnimatePresence>
+                {revealImg.show_amorces && (
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    className={revealImg.class}
+                  >
+                <Image alt="images des produits" filename={"pecheur1.jpg"} />
+ 
+                </motion.div>
+                )}
+              </AnimatePresence>
+
+              <AnimatePresence>
+                {revealImg.show_appats && (
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    className={revealImg.class}
+                  >
+                <Image alt="images des produits" filename={"pecheur1.jpg"} />
+ 
+                </motion.div>
+                )}
+              </AnimatePresence>
+
+
+
+          {/* <Image alt="images des produits" filename={"pecheur1.jpg"} /> */}
+        </div>
+
+                {/* <Link to="/articles">
           <div className="produits_img_container">
               <Image alt="image d'un pêcheur" filename={"pecheur1.jpg"} />
               <h2>Articles</h2>
@@ -140,7 +252,7 @@ const IndexPage = () => {
                 <Image alt="image d'additifs" filename={"vers-farine.jpg"} />
                 <h2>Appâts</h2>
             </div>
-        </Link>
+        </Link> */}
       </section>
 
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#00539c" fill-opacity="1" d="M0,288L80,250.7C160,213,320,139,480,138.7C640,139,800,213,960,234.7C1120,256,1280,224,1360,208L1440,192L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path></svg>
