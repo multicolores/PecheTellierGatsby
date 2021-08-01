@@ -1,7 +1,8 @@
-import React, {useState, useEffect } from "react";
+import React, {useState, useRef } from "react";
 import { Link } from "gatsby"
 import { Slide } from 'react-slideshow-image';
 import { motion, AnimatePresence } from "framer-motion";
+import gsap from "gsap";
 
 import 'react-slideshow-image/dist/styles.css'
 import Layout from "../components/layout"
@@ -52,14 +53,65 @@ const IndexPage = () => {
   const [revealImg, setRevealImg] = useState({
     show: false,
     show_articles: true,
-    show_Amorces: false,
+    show_amorces: false,
     show_appats: false,
     class: "r",
   });
 
+  let ImageProduit = useRef(null);
+  let ImageArticles = useRef(null);
+  let ImageAmorces = useRef(null);
+  let ImageAppats = useRef(null);
 
+  const handleImages = image => {
+    if(image === "ImageArticles"){
+        gsap.to(ImageArticles, {
+          duration: 0.4,
+          opacity: 1,
+          background: "red",
+          ease: "power3.inOut",        
+      });
+    }
+    if(image === "ImageAmorces"){
+        gsap.to(ImageAmorces, {
+          duration: 0.4,
+          opacity: 1,
+          background: "red",
+          ease: "power3.inOut",        
+        });
+     }
+    if(image === "ImageAppats"){
+      gsap.to(ImageAppats, {
+        duration: 0.4,
+        opacity: 1,
+        background: "red",
+        ease: "power3.inOut",        
+      });
+    }
 
+};
 
+const handleImagesReturn = image => {
+  if(image === "ImageArticles"){
+    gsap.to(ImageArticles, {
+      duration: 0.4,
+      opacity:0,
+  });
+  }
+  if(image === "ImageAmorces"){
+    gsap.to(ImageAmorces, {
+      duration: 0.4,
+      opacity:0
+  });
+  }
+  if(image === "ImageAppats"){
+    gsap.to(ImageAppats, {
+      duration: 0.4,
+      opacity:0
+  });
+  }
+
+};
 
 
   return (
@@ -137,70 +189,36 @@ const IndexPage = () => {
           </div>
         </div>
       </section>
+      
 
       <section className="produits">
-
 
         <div className="text_container">
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero maiores nostrum non minus officia, aliquid debitis adipisci voluptate quis eveniet inventore veritatis dolorum obcaecati corrupti quae voluptatem aperiam impedit. Voluptas!</p>
             <div className="links">
-              <motion.div 
-                  onHoverStart={()=>
-                   setRevealImg({
-                       show_articles: true,
-                       class: "animated",
-                   })}
-                   onHoverEnd={()=>
-                    setRevealImg({
-                      show_articles: false,
-                      class: "r",
-                    })}>
+
+              <div onMouseEnter={() => handleImages("ImageArticles")} onMouseOut={() => handleImagesReturn("ImageArticles")} >
                <Link to="/articles">Articles</Link>
-              </motion.div>
-
-              <motion.div 
-                  onHoverStart={()=>
-                   setRevealImg({
-                    show_Amorces: true,
-                       class: "animated",
-                   })}
-                   onHoverEnd={()=>
-                    setRevealImg({
-                      show_Amorces: false,
-                      class: "r",
-                    })}>
-              <Link to="/amorces">Amorces</Link>
-              </motion.div>
-
-              <motion.div 
-                  onHoverStart={()=>
-                   setRevealImg({
-                       show_appats: true,
-                       class: "animated",
-                   })}
-                   onHoverEnd={()=>
-                    setRevealImg({
-                      show_appats: false,
-                      class: "r",
-                    })}>
-              <Link to="/appats">Appâts</Link>
-              </motion.div>
+              </div>              
+              <div onMouseEnter={() => handleImages("ImageAmorces")} onMouseOut={() => handleImagesReturn("ImageAmorces")} >
+               <Link to="/amorces">Amorces</Link>
+              </div>      
+              <div onMouseEnter={() => handleImages("ImageAppats")} onMouseOut={() => handleImagesReturn("ImageAppats")} >
+               <Link to="/appats">Appâts</Link>
+              </div>      
+              
             </div>
         </div>
-        <div className="imgs_container">
-              <AnimatePresence>
-                {revealImg.show_articles && (
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    className={revealImg.class}
-                  >
-                <Image alt="images des produits" filename={"pecheur1.jpg"} />
- 
-                </motion.div>
-                )}
-              </AnimatePresence>
+
+        <div ref={el => (ImageProduit = el)} className="imgs_container"> 
+          <div ref={el => (ImageArticles = el)}> <Image alt="images des produits" filename={"pecheur1.jpg"} /></div>
+          <div ref={el => (ImageAmorces = el)}> <Image alt="image de leurs" filename={"magasin-interieur.jpg"} /></div>
+          <div ref={el => (ImageAppats = el)}> <Image alt="image d'additifs" filename={"vers-farine.jpg"} /></div>
+        </div>
+
+        {/* <div className="imgs_container">
+
+
 
               <AnimatePresence>
                 {revealImg.show_amorces && (
@@ -232,8 +250,8 @@ const IndexPage = () => {
 
 
 
-          {/* <Image alt="images des produits" filename={"pecheur1.jpg"} /> */}
-        </div>
+          {/* <Image alt="images des produits" filename={"pecheur1.jpg"} /> 
+        </div> */}
 
                 {/* <Link to="/articles">
           <div className="produits_img_container">
@@ -254,6 +272,13 @@ const IndexPage = () => {
             </div>
         </Link> */}
       </section>
+
+
+      <div className="marques">
+      {/* <h1>Les plus grandes marques de pêches</h1> */}
+      <Drag />
+
+    </div>
 
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#00539c" fill-opacity="1" d="M0,288L80,250.7C160,213,320,139,480,138.7C640,139,800,213,960,234.7C1120,256,1280,224,1360,208L1440,192L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path></svg>
       <section className="avis">
@@ -276,13 +301,6 @@ const IndexPage = () => {
         </Link>
       </section>
 
-
-
-    <div className="marques">
-      {/* <h1>Les plus grandes marques de pêches</h1> */}
-      <Drag />
-
-    </div>
 
     </Layout>
   );
