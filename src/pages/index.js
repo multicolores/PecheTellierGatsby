@@ -1,7 +1,7 @@
 import React, {useState, useRef } from "react";
 import { Link } from "gatsby"
 import { Slide } from 'react-slideshow-image';
-import { motion, AnimatePresence } from "framer-motion";
+// import { motion, AnimatePresence } from "framer-motion";
 import gsap from "gsap";
 
 import 'react-slideshow-image/dist/styles.css'
@@ -175,6 +175,11 @@ const handleImagesReturn = image => {
       </section>
 
       <section className="magasin" id="magasin">
+        <div className="svg_container">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <path fill="#00539c" d="M37.2,-36.1C51.7,-32.2,69.5,-23.8,69.9,-13.4C70.4,-3.1,53.7,9.1,41.7,18.5C29.7,28,22.3,34.5,14,37C5.6,39.4,-3.8,37.7,-15.9,36.5C-28.1,35.2,-43.1,34.4,-54.7,26C-66.2,17.5,-74.3,1.5,-72.5,-13.5C-70.8,-28.6,-59.2,-42.7,-45.5,-46.8C-31.8,-50.8,-15.9,-44.9,-2.3,-42.2C11.3,-39.5,22.7,-40,37.2,-36.1Z" transform="translate(100 100)" />
+        </svg>
+        </div>
         <div className="text_container">
           <h1>Notre</h1>
           <h1>Magasin</h1>
@@ -196,7 +201,6 @@ const handleImagesReturn = image => {
         <div className="text_container">
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero maiores nostrum non minus officia, aliquid debitis adipisci voluptate quis eveniet inventore veritatis dolorum obcaecati corrupti quae voluptatem aperiam impedit. Voluptas!</p>
             <div className="links">
-
               <div onMouseEnter={() => handleImages("ImageArticles")} onMouseOut={() => handleImagesReturn("ImageArticles")} >
                <Link to="/articles">Articles</Link>
               </div>              
@@ -205,13 +209,13 @@ const handleImagesReturn = image => {
               </div>      
               <div onMouseEnter={() => handleImages("ImageAppats")} onMouseOut={() => handleImagesReturn("ImageAppats")} >
                <Link to="/appats">Appâts</Link>
-              </div>      
-              
+              </div>       
             </div>
         </div>
 
         <div ref={el => (ImageProduit = el)} className="imgs_container"> 
-          <div ref={el => (ImageArticles = el)}> <Image alt="images des produits" filename={"pecheur1.jpg"} /></div>
+          <div className="permanantImg"> <Image alt="image du magasin" filename={"image 35-min.png"} /></div>
+          <div ref={el => (ImageArticles = el)} className="articleimg"> <Image alt="images des produits" filename={"pecheur1.jpg"} /></div>
           <div ref={el => (ImageAmorces = el)}> <Image alt="image de leurs" filename={"magasin-interieur.jpg"} /></div>
           <div ref={el => (ImageAppats = el)}> <Image alt="image d'additifs" filename={"vers-farine.jpg"} /></div>
         </div>
