@@ -449,6 +449,11 @@ nav {
       color: white;
     }
   }
+  @media (max-width: 950px) {
+    .text_container {
+      width: 80%;
+    }
+  }
   .svg_container {
     position: absolute;
     // left: -20%;
@@ -462,12 +467,62 @@ nav {
       left: -40%;
     }
   }
+  @media (max-width: 950px) {
+    .text_container {
+      width: 100%;
+    }
+    .svg_container {
+      width: 1250px;
+      top: -25%;
+      left: -300px;
+    }
+    .image_container {
+      height: 70%;
+    }
+  }
+  @media (max-width: 400px) {
+    height: 120vh;
+    padding: 0;
+    .text_container {
+      width: 100%;
+      padding: 0;
+      padding: 0 3%;
+
+      h1 {
+        font-size: 4em;
+      }
+      p {
+        line-height: 1.3;
+        font-size: 1.1em;
+      }
+    }
+    .svg_container {
+      top: -35%;
+    }
+    .image_container {
+      height: 60%;
+      .image1 {
+        left: 0%;
+        width: 45%;
+        height: 50%;
+      }
+      .image2 {
+        right: 0%;
+        width: 45%;
+      }
+    }
+  }
 }
 
 //! Avis
 svg {
   transform: translateY(5%);
   margin-top: -10%;
+}
+@media (max-width: 770px) {
+  .svg_avis {
+    transform: translateY(10px) !important;
+  }
 }
 .avis {
   // height: 100vh;
@@ -504,7 +559,7 @@ svg {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 20vh;
+  margin-top: 30vh;
   .text_container {
     width: 45%;
     // height: 60%;
@@ -590,7 +645,37 @@ svg {
       // }
     }
   }
+  @media (max-width: 1150px) {
+    flex-wrap: wrap;
+    height: 100vh;
+    justify-content: center;
+    gap: 10%;
+    margin-top: 20vh;
+    .text_container {
+      width: 80%;
+      text-align: center;
+    }
+    .imgs_container {
+      width: 80%;
+      height: 50%;
+    }
+  }
+  @media (max-width: 650px) {
+    padding: 0;
+    .text_container {
+      width: 100%;
+      text-align: center;
+      .links {
+        padding: 5%;
+      }
+    }
+    .imgs_container {
+      width: 100%;
+      height: 50%;
+    }
+  }
 }
+
 @keyframes ImgReveal {
   0% {
     width: 0%;
