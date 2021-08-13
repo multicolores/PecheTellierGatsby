@@ -63,20 +63,20 @@ const IndexPage = () => {
   let ImageAmorces = useRef(null);
   let ImageAppats = useRef(null);
 
+
   const handleImages = image => {
     if(image === "ImageArticles"){
-        gsap.to(ImageArticles, {
-          duration: 0.4,
-          opacity: 1,
-          background: "red",
-          ease: "power3.inOut",        
+      gsap.to(ImageArticles, {
+        duration: 0.4,
+        opacity: 1,
+        ease: "power3.inOut",        
       });
+
     }
     if(image === "ImageAmorces"){
         gsap.to(ImageAmorces, {
           duration: 0.4,
           opacity: 1,
-          background: "red",
           ease: "power3.inOut",        
         });
      }
@@ -84,7 +84,6 @@ const IndexPage = () => {
       gsap.to(ImageAppats, {
         duration: 0.4,
         opacity: 1,
-        background: "red",
         ease: "power3.inOut",        
       });
     }
@@ -97,6 +96,7 @@ const handleImagesReturn = image => {
       duration: 0.4,
       opacity:0,
   });
+  
   }
   if(image === "ImageAmorces"){
     gsap.to(ImageAmorces, {

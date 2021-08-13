@@ -283,6 +283,9 @@ nav {
     background: $second_color;
     overflow: hidden;
     // transform: translateX(5%);
+    @media (max-width: 550px) {
+      width: 130%;
+    }
     right: 0;
     .image {
       height: 100%;
@@ -292,10 +295,19 @@ nav {
   .title_container {
     position: absolute;
     margin-left: 10vw;
-    margin-top: 15%;
+    margin-top: 30vh;
+    @media (max-width: 1100px) {
+      margin-top: 30vh;
+    }
+    @media (max-width: 550px) {
+      margin-left: 5vw;
+    }
     .span_container {
       &:nth-child(2) {
         margin-top: 100px;
+        @media (max-width: 1100px) {
+          margin-top: 8vw;
+        }
       }
       span {
         font-size: 10em;
@@ -304,6 +316,15 @@ nav {
         // font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         font-family: "Revue", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         display: inline-block;
+        @media (max-width: 1100px) {
+          font-size: 15vw;
+        }
+        @media (max-width: 800px) {
+          font-size: 20vw;
+        }
+        @media (max-width: 550px) {
+          font-size: 22vw;
+        }
       }
     }
     a {
@@ -388,10 +409,14 @@ nav {
   justify-content: space-around;
   align-items: center;
   position: relative;
+  flex-wrap: wrap;
+  height: 170vh;
+  margin-top: 20vh;
   .image_container {
     width: 50%;
     height: 90%;
     position: relative;
+    width: 100%;
     .image1 {
       position: absolute;
       left: 5%;
@@ -411,6 +436,7 @@ nav {
   }
   .text_container {
     width: 50%;
+    width: 60%;
     h1 {
       color: $primary_color !important;
       font-size: 5em;
@@ -425,10 +451,16 @@ nav {
   }
   .svg_container {
     position: absolute;
-    left: -20%;
+    // left: -20%;
+    // top: -30%;
     top: -30%;
-    width: 100%;
+    width: 1500px;
     z-index: -3;
+    @media (max-width: 950px) {
+      width: 2000px;
+      top: -50%;
+      left: -40%;
+    }
   }
 }
 
@@ -472,6 +504,7 @@ svg {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 20vh;
   .text_container {
     width: 45%;
     // height: 60%;
@@ -794,12 +827,14 @@ svg {
       font-size: 10em;
       color: $font_color !important;
       // border-bottom: 20px solid $primary_color;
-      -webkit-text-fill-color: transparent;
-      -webkit-text-stroke-width: 5px;
-      -webkit-text-stroke-color: $font_color;
+      // -webkit-text-fill-color: transparent;
+      // -webkit-text-stroke-width: 5px;
+      // -webkit-text-stroke-color: $font_color;
       font-family: "Revue", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       font-weight: normal;
+      color: $second_color !important;
       // border-bottom: 10px solid $primary_color;
+      z-index: 2;
       &::after {
         content: "";
         position: absolute;
@@ -807,6 +842,7 @@ svg {
         bottom: -10%;
         height: 15%;
         width: 100%;
+        z-index: 1;
         background: $primary_color;
         pointer-events: none;
         transition: 0.3s;
@@ -819,11 +855,15 @@ svg {
 
 footer {
   width: 100%;
-  height: 35vh;
+  // height: 35vh;
   padding: 0 10vw;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  flex-wrap: wrap;
+  @media (max-width: 1200px) {
+    padding: 0 3vw;
+  }
   a {
     text-decoration: none;
   }
@@ -832,8 +872,12 @@ footer {
   }
   & > div {
     width: 30%;
-    height: 100%;
+    height: 35vh;
     padding: 2vh 0;
+    min-width: 300px;
+    @media (max-width: 350px) {
+      min-width: 80vw;
+    }
     hr {
       background: $font_color;
     }
@@ -841,7 +885,7 @@ footer {
   .a_propos {
     h2 {
       font-family: "Revue";
-      font-size: 3vw;
+      font-size: 1.7em;
       color: $primary_color;
     }
     p {

@@ -35,7 +35,9 @@ const Layout = ({ children, location }) => {
 
       {/* Here we pass the callbacks to the component. Anything that impacts the innerHeight, for example: Font Loaded */}
       <Scroll callbacks={location} />
-      <PageTransition>
+      <PageTransition
+          transitionTime={500}
+      >
       <div id="container">
         <main>{children}</main>
         <Footer />
