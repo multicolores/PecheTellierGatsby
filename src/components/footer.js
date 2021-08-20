@@ -48,8 +48,8 @@ const Nav = () => (
             <hr />
             <Link to="/" activeClassName="active">Notre magasin</Link> <br />
             <Link to="/appats" activeClassName="active">Appâts</Link><br />
-            <Link to="/amorces" activeClassName="active">Amorces</Link><br />
             <Link to="/articles" activeClassName="active">Articles</Link><br />
+            <Link to="/amorces" activeClassName="active">Amorces</Link><br />
             <Link to="/contact" activeClassName="active">Contact</Link>
         </div>
     </footer>

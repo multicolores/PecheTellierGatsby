@@ -13,6 +13,7 @@
 $bg_color: white;
 $font_color: #191919;
 $font_color2: #f2edd7;
+$font_color2: #ffffff;
 $primary_color: #fee715;
 $second_color: #00539c;
 
@@ -199,6 +200,7 @@ nav {
         transform: scaleX(1);
         transition: 0.3s;
         transform-origin: left;
+        opacity: 1;
       }
     }
   }
@@ -412,6 +414,10 @@ nav {
   flex-wrap: wrap;
   height: 170vh;
   margin-top: 20vh;
+  svg {
+    transform: translateY(5%);
+    margin-top: -10%;
+  }
   .image_container {
     width: 50%;
     height: 90%;
@@ -515,7 +521,11 @@ nav {
 }
 
 //! Avis
-svg {
+// svg {
+//   transform: translateY(5%);
+//   margin-top: -10%;
+// }
+.svg_avis {
   transform: translateY(5%);
   margin-top: -10%;
 }
@@ -524,14 +534,37 @@ svg {
     transform: translateY(10px) !important;
   }
 }
+
 .avis {
   // height: 100vh;
-  padding: 10vh 15vw;
+  padding: 5vh 15vw;
+  padding-bottom: 18vh;
   margin: 0;
   text-align: center;
-  position: relative;
+  position: relative !important;
   background: $second_color;
   color: $font_color2;
+
+  .waves-bottom-container {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    // transform: rotate(180deg);
+    background: white;
+    svg {
+      position: relative;
+      display: block;
+      width: calc(100% + 1.3px);
+      height: 72px;
+      transform: rotateY(180deg) translateY(-2px);
+    }
+    .shape-fill {
+      fill: $second_color;
+    }
+  }
   h1 {
     color: $primary_color !important;
     font-size: 3em;
@@ -549,6 +582,24 @@ svg {
     width: 15%;
     margin-left: 50%;
     transform: translateX(-50%);
+  }
+  @media (max-width: 770px) {
+    padding: 10vh 5vw;
+
+    .avis_text {
+      padding: 5% 8%;
+    }
+    .image {
+      width: 30%;
+    }
+  }
+  @media (max-width: 400px) {
+    h1 {
+      font-size: 2em;
+    }
+    p {
+      font-size: 1em;
+    }
   }
 }
 

@@ -2,7 +2,6 @@ import React from "react"
 import "./styles.scss";
 
 import BigImage from "./big_image"
-import Image from "./image"
 import ImageParallax from "./image_parallax"
 
 
