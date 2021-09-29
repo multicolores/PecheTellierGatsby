@@ -9,6 +9,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import PageTransition from 'gatsby-plugin-page-transitions';
+import { motion } from "framer-motion";
 
 import Scroll from "./locomotiveScroll"
 import Header from "./header"
@@ -35,14 +36,24 @@ const Layout = ({ children, location }) => {
 
       {/* Here we pass the callbacks to the component. Anything that impacts the innerHeight, for example: Font Loaded */}
       <Scroll callbacks={location} />
-      <PageTransition
+      {/* <PageTransition
           transitionTime={500}
-      >
-      <div id="container">
+      > */}
+        <motion.div 
+          id="container"
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: 30 }}
+          transition={{
+            type: "spring",
+            stiffness: 100,
+            duration: 0.5
+          }} 
+        >
         <main>{children}</main>
         <Footer />
-      </div>
-      </PageTransition>
+      </motion.div>
+      {/* </PageTransition> */}
     </>
   )
 }
