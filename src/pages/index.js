@@ -1,7 +1,7 @@
 import React, {useState, useRef } from "react";
 import { Link } from "gatsby"
 import { Slide } from 'react-slideshow-image';
-// import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import gsap from "gsap";
 
 import 'react-slideshow-image/dist/styles.css'
@@ -148,12 +148,10 @@ const handleImagesReturn = image => {
       </section> */}
 
       <section className="hero_section">
-        <div className="bg_image">
-          <div className="img_container_loco" data-scroll data-scroll-speed="-1.7">
+      <div className="image_container">
             <BigImage alt="image de fond représentant un pêcheur" filename={"flat-peche2.png"} />
-          </div>
         </div>
-        <div className="title_container" data-scroll data-scroll-speed="2.7">
+        <div className="text_container" data-scroll data-scroll-speed="1">
           <div className="span_container">
             <span className="span_1">P</span>
             <span className="span_2">ê</span>
@@ -170,8 +168,10 @@ const handleImagesReturn = image => {
             <span className="span_6">E</span>
             <span className="span_7">R</span>
           </div>
+          <motion.p initial={{opacity:0, y: -10}} animate={{opacity: 1, y:0}} transition={{ duration: 0.3, delay: 0.9}}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam dolorem dolores quos non nihil beatae.</motion.p>
           <a href="#magasin">découvrez notre magasin</a>
         </div>
+
       </section>
 
       <section className="magasin" id="magasin">

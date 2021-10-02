@@ -3,6 +3,7 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import BigImage from "../components/big_image"
+import ArticlesPage from "../components/articlesPage"
 
 import { FaPhone } from 'react-icons/fa';
 import { FaMapMarkedAlt } from 'react-icons/fa';
@@ -11,15 +12,22 @@ import { FaFacebookF } from 'react-icons/fa';
 const Contact = () => (
   <Layout>
     <SEO title="Contact" />
-    <section className="contact_container">
-        <div className="hero">
+    <ArticlesPage 
+        image_url="magasin-interieur.jpg" 
+        title="Contact" 
+        paragraphe="Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio deserunt commodi beatae laudantium autem dicta. Quo pariatur quaerat in cupiditate, ab perferendis culpa commodi."
+        boutton="Nous contacter"
+    />
+    <section className="contact_container" id="next-section">
+        {/* <div className="hero">
             <div className="bg_image">
                 <div className="img_container_loco" data-scroll data-scroll-speed="-1.7">
                     <BigImage alt="image de fond d'un brochet" filename={"magasin-interieur.jpg"} />
                 </div>
             </div>
             <h1>Nos coordonnées</h1>
-        </div>
+        </div> */}
+
         <div className="items_container">
             <div>
                 <FaPhone />

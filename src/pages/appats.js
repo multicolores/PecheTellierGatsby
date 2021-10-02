@@ -10,14 +10,12 @@ const Appats = () => (
     <SEO title="Appâts" />
     <ArticlesPage 
     image_url="vers-farine.jpg"
-    image_url2="magasin-interieur.jpg"
-    image_url3="magasin-interieur.jpg"
     title="Appâts" 
     paragraphe="Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio deserunt commodi beatae laudantium autem dicta. Quo pariatur quaerat in cupiditate, ab perferendis culpa commodi ex. Provident, perspiciatis aliquam deserunt enim asperiores."
-    paragraphe2="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo pariatur quaerat in cupiditate, ab perferendis culpa commodi ex. Provident, perspiciatis aliquam deserunt enim asperiores, laudantium sed modi dolores ratione neque eligendi libero quae perferendis necessitatibus nulla nemo facilis suscipit et quas reiciendis est, minus eius ipsum. Odio molestiae quae velit. Voluptates saepe vitae excepturi, atque cupiditate quam itaque labore ad incidunt quia explicabo expedita suscipit necessitatibus sint consequuntur! Tempore."
+    boutton="Découvrir"
     />
 
-    <section className="appatsSection">
+    <section className="appatsSection" id="next-section">
       <h1>Des appâts vivants efficaces</h1>
       <div className="gallery_container">
         <div className="imgWtext">

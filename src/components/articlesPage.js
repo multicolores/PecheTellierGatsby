@@ -10,9 +10,21 @@ import WebGlImage from "./webgl_image"
 const Project = (props) => {
     return(
         <>
+        <section className="ArticlesPages-Hero">
+                <div className="text_container">
+                    <h1>{props.title}</h1>
+                    <p>{props.paragraphe}</p>
+                    <a href="#next-section">{props.boutton}</a>
+                </div>
+                <div className="image_container">
+                    <div className="img_container_loco" data-scroll data-scroll-speed="-1.7">
+                        <BigImage alt="image de fond d'un brochet" filename={props.image_url} />
+                    </div>
+                </div>
+        </section>
         {/* <WebGlImage url="ImageArticles" /> */}
 
-        <div className="articlesPages">
+        {/* <div className="articlesPages">
             <section className="hero-articles">
                 <div className="bg_image">
                     <div className="img_container_loco" data-scroll data-scroll-speed="-1.7">
@@ -36,7 +48,7 @@ const Project = (props) => {
             </div>
         </section>
 
-        </div>
+        </div> */}
 </>
     )
 }
